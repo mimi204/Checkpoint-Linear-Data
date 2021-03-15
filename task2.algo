@@ -1,0 +1,38 @@
+ALGORITHM somme
+VAR
+    tab1 : ARRAY_OF INTEGER[100];
+    tab2 : ARRAY_OF INTEGER[100];
+    i,j:INTEGER=0
+    s:INTEGER=0
+    found:BOOLEAN;
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+    found:=TRUE
+        FOR j FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (tab1[i]=tab2[j]) THEN
+        found:=FALSE;
+        BREAK;
+        END_IF
+        END_FOR
+       
+    END_FOR
+    IF(found=TRUE) THEN
+    s:=s +tab1[i]
+    END_IF
+
+    FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+    found:=TRUE
+        FOR j FROM 0 TO tab1.length-1 STEP 1  DO
+        IF (tab2[i]=tab1[j]) THEN
+        found:=FALSE;
+        BREAK;
+        END_IF
+        END_FOR
+        END_FOR
+    IF(found=TRUE) THEN
+        s:=s +tab2[i]
+    END_IF
+    END_FOR
+
+    Write (s);
+END
