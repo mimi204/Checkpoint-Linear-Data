@@ -7,10 +7,10 @@ VAR
     found:BOOLEAN;
 BEGIN
     FOR i FROM 0 TO tab1.length-1 STEP 1  DO
-    found:=TRUE
+    found:=FALSE
         FOR j FROM 0 TO tab2.length-1 STEP 1  DO
         IF (tab1[i]=tab2[j]) THEN
-        found:=FALSE;
+        found:=TRUE;
         BREAK;
         END_IF
         END_FOR
@@ -21,7 +21,7 @@ BEGIN
     END_IF
 
     FOR i FROM 0 TO tab2.length-1 STEP 1  DO
-    found:=TRUE
+    found:=FALS
         FOR j FROM 0 TO tab1.length-1 STEP 1  DO
         IF (tab2[i]=tab1[j]) THEN
         found:=FALSE;
